@@ -1,0 +1,26 @@
+organização do projeto (me descondiderando da organização):
+
+JavaScript: 1 pessoa
+banco de dados e django: 1 pessoa
+python: 2 pessoas
+CSS: 3 pessoas
+html: 2 ou 3 pessoas (por enquanto)
+
+telas a serem criadas sozinhas em arquivo html:
+boletim (para as 3 páginas pessoais)
+calendário (vai ser muito reutilizado)
+página de login (está sendo criada)
+telas de chats
+
+professores -> quadro de horários
+chats
+notas e entrega de atividades (mesma página)
+turmas
+
+reunião dia 12/09/26:
+
+Explicar como vai funcionar o desenvolvimento de cada área;
+definir telas que serão criadas durante a semana;
+definir quem ficará com as telas criadas e como será construido;
+debater sobre novas funcionalidades importantes para o desenvolvimento do software;
+definir o que será criado a partir das pesquisas e entrevistas;
