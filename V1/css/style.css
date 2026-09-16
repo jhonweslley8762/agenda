@@ -1,0 +1,479 @@
+/* =========================================================
+   RESET E BASE
+   ========================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #d3d3d3;
+  color: #1a1d29;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+input,
+select {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* =========================================================
+   MOBILE FIRST
+   O layout foi aproximado ao mockup, com múltiplos cards de
+   celular em fundo cinza e uma aparência mais "projeto de UI".
+   ========================================================= */
+.app-shell {
+  width: 100%;
+  max-width: 420px;
+  background: #f3f3f3;
+  border-radius: 10px;
+  box-shadow: none;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
+  margin: 2px;
+}
+
+.content {
+  padding: 0;
+}
+
+#app-content {
+  display: block;
+}
+
+/* Painel de marca: escondido no celular, aparece só no desktop */
+.brand-panel {
+  display: none;
+}
+
+/* Animação de entrada de cada tela injetada pelo router */
+.screen {
+  animation: fade-in 0.25s ease;
+  background: #eceae8;
+  border-radius: 10px;
+  min-height: 620px;
+  padding: 14px 18px 18px;
+  box-shadow: none;
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.screen-top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2px 4px 8px;
+  min-height: 28px;
+}
+
+.clock {
+  font-size: 14px;
+  font-weight: 700;
+  color: #17181d;
+  letter-spacing: 0.2px;
+}
+
+/* ---------- Tipografia ---------- */
+.title-lg {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: #111318;
+}
+.title-md {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #111318;
+}
+.subtitle {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b7280;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+.muted {
+  font-size: 13px;
+  color: #9ca3af;
+}
+.center {
+  text-align: center;
+}
+
+/* ---------- Cabeçalho de tela (título + voltar) ---------- */
+.screen-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  min-height: 48px;
+}
+.link-back {
+  background: none;
+  margin-top: 0;
+  font-size: 13px;
+  color: #1d1d1d;
+  transition: color 0.15s;
+  font-weight: 700;
+}
+.link-back:hover {
+  color: #1a1d29;
+}
+
+/* Link em forma de botão, usado dentro de textos */
+.link-inline {
+  background: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: underline;
+  padding: 0;
+}
+.link-inline.danger {
+  color: #ef4444;
+}
+
+/* ---------- Botões ---------- */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.btn {
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  transition: background 0.15s, transform 0.05s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: none;
+  min-height: 48px;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn-blue  { background: #4d7ef3; }
+.btn-blue:hover  { background: #3d6ee1; }
+.btn-green { background: #0a8b6d; }
+.btn-green:hover { background: #0a7a60; }
+
+.btn-inline {
+  width: auto;
+  align-self: center;
+}
+.role-btn {
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+  height: 46px;
+  border-radius: 10px;
+  padding: 0 16px;
+}
+
+/* ---------- Campos de formulário ---------- */
+.input {
+  width: 100%;
+  background: #e3e3e3;
+  border: 1px solid #d8d8d8;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #1a1d29;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  min-height: 42px;
+}
+.input::placeholder {
+  color: #7d7d7d;
+}
+.input:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+  background: #f2f2f2;
+}
+
+/* Seta customizada dos <select> (a nativa varia entre navegadores) */
+.select-wrap select.input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%239ca3af' stroke-width='2'><path d='M4 6l4 4 4-4'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+/* Caixa destacada da tela de login */
+.login-box {
+  border: 0;
+  border-radius: 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* "manter conectado" */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #6b7280;
+  cursor: pointer;
+}
+.checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* ---------- Mensagens ---------- */
+.error {
+  font-size: 13px;
+  color: #ef4444;
+}
+
+.hint {
+  font-size: 13px;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: rgba(255,255,255,0.2);
+}
+.hint-success {
+  background: #ecfdf5;
+  color: #065f46;
+}
+.hint-info {
+  background: #eff6ff;
+  color: #1e40af;
+}
+.hint-warn {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+/* Nota sobre os dados guardados no navegador */
+.storage-note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #9ca3af;
+  text-align: center;
+}
+
+/* ---------- Tela de boas-vindas ---------- */
+.welcome-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 26px;
+  margin: 12px auto 18px;
+  padding-top: 10px;
+}
+.bubble {
+  width: 110px;
+  height: 92px;
+  border-radius: 50px 50px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  position: relative;
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 18px;
+  background: inherit;
+  border-radius: 0 0 20px 20px;
+}
+.bubble-blue  { background: #d9ebff; }
+.bubble-green { background: #cfe8df; height: 104px; }
+
+/* ---------- Painel do usuário logado ---------- */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.data-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.data-card {
+  background: #f9fafb;
+  border: 1px solid #f1f2f4;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.data-label {
+  font-size: 11px;
+  color: #9ca3af;
+}
+.data-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1d29;
+  margin-top: 2px;
+  word-break: break-word;
+}
+
+/* =========================================================
+   TABLET — a partir de 640px
+   O card fica um pouco mais largo e os dados do painel
+   passam a ser exibidos em duas colunas.
+   ========================================================= */
+@media (min-width: 640px) {
+  .app-shell {
+    max-width: 480px;
+  }
+  .content {
+    padding: 32px;
+  }
+  .data-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================================
+   DESKTOP / MONITOR — a partir de 1024px
+   Agora há espaço para o painel de marca ao lado do
+   conteúdo: o layout vira duas colunas.
+   ========================================================= */
+@media (min-width: 1024px) {
+  .app-shell {
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .brand-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    padding: 40px;
+    background: linear-gradient(135deg, #2563eb, #065f46);
+    color: #ffffff;
+  }
+
+  /* Círculos decorativos do fundo */
+  .brand-blob {
+    position: absolute;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .blob-1 { width: 160px; height: 160px; top: -40px; right: -40px; }
+  .blob-2 { width: 130px; height: 130px; bottom: 70px; left: -40px; }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .brand-name {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .brand-tagline {
+    margin-top: 12px;
+    max-width: 220px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .brand-footer {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  /* Indicador de progresso */
+  .steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .step-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s, color 0.2s;
+  }
+  .step-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.2s;
+  }
+  /* A classe .done é adicionada pelo app.js na etapa atual e nas anteriores */
+  .step.done .step-dot {
+    background: #ffffff;
+    color: #1d4ed8;
+  }
+  .step.done .step-label {
+    color: #ffffff;
+  }
+
+  .content {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
