@@ -183,7 +183,25 @@ const Storage = (() => {
     return localStorageDisponivel;
   }
 
+  /* -------------------------------------------------------
+     DADOS SOLTOS DAS TELAS (anotações, informações, chats)
+     Cada um guarda o que quiser numa chave própria, por
+     exemplo "anotacoes:12345678900:aluno".
+     ------------------------------------------------------- */
+
+  /** Salva qualquer valor (texto, lista, objeto) numa chave. */
+  function salvarDado(chave, valor) {
+    return escrever(`agenda_escolar:dado:${chave}`, valor);
+  }
+
+  /** Lê o valor de uma chave; devolve valorPadrao se não houver. */
+  function lerDado(chave, valorPadrao) {
+    return ler(`agenda_escolar:dado:${chave}`, valorPadrao);
+  }
+
   return {
+    salvarDado,
+    lerDado,
     listarContas,
     salvarConta,
     buscarConta,

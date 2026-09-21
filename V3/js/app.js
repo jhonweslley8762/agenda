@@ -67,6 +67,19 @@ window.onScreenLoaded = function (name) {
     case "cadastro":  initCadastro();  break;
     case "perfil":    initPerfil();    break;
     case "dashboard": initDashboard(); break;
+
+    // ---- Área do estudante ----
+    case "estudante":       initEstudante();      break;
+    case "pagina-pessoal":  initPaginaPessoal();  break;
+    case "boletim":         initBoletim();        break;
+    case "anotacoes":       initTextoLivre("anotacoes");   break;
+    case "informacoes":     initTextoLivre("informacoes"); break;
+    case "grupos":          initGrupos();         break;
+    case "sala-aluno":      initSalaAluno();      break;
+    case "calendario":      initCalendario();     break;
+    case "chat-sala":       initChatSala();       break;
+    case "chat-gerencia":   initChatGerencia();   break;
+
     default:          Router.replace("welcome");
   }
 };
@@ -82,6 +95,17 @@ function podeAbrir(name) {
     case "perfil":
       return Boolean(state.pendingRole && state.cadastroDados);
     case "dashboard":
+    // Todas as telas da área do estudante exigem estar logado
+    case "estudante":
+    case "pagina-pessoal":
+    case "boletim":
+    case "anotacoes":
+    case "informacoes":
+    case "grupos":
+    case "sala-aluno":
+    case "calendario":
+    case "chat-sala":
+    case "chat-gerencia":
       // Aqui vale a conta em memória OU a sessão salva no navegador
       return Boolean(state.contaAtual || Storage.contaLogada());
     default:
@@ -94,7 +118,8 @@ function updateSteps(screenName) {
   const order = {
     welcome: 0, role: 1, cadastro: 2, login: 2, perfil: 3, dashboard: 3,
   };
-  const current = order[screenName] ?? 0;
+  // Telas da área do estudante ficam todas no último passo
+  const current = order[screenName] ?? 3;
 
   document.querySelectorAll(".step").forEach((stepEl) => {
     stepEl.classList.toggle("done", Number(stepEl.dataset.step) <= current);
@@ -352,12 +377,248 @@ function initDashboard() {
       `conta salva neste navegador em ${formatDateTime(conta.criadoEm)}`;
   }
 
+  document.getElementById("btn-abrir-estudante").addEventListener("click", () => {
+    Router.navigate("estudante");
+  });
+
   document.getElementById("btn-sair").addEventListener("click", () => {
     Storage.limparSessao();   // encerra a sessão, mantendo a conta salva
     state.contaAtual = null;
     state.justCreated = false;
     Router.navigate("welcome");
   });
+}
+
+/* =========================================================
+   ÁREA DO ESTUDANTE
+   ---------------------------------------------------------
+   Telas tiradas do protótipo do Figma. Todas usam os mesmos
+   três ajudantes abaixo, para não repetir código:
+
+     ligarNavegacao()  → botões "← voltar" e a casinha
+     ligarMenu()       → botões com data-ir="nome-da-tela"
+     chaveDaConta()    → identifica a conta nos dados salvos
+   ========================================================= */
+
+/** Liga os botões de voltar e o botão de início (casinha). */
+function ligarNavegacao() {
+  document.querySelectorAll("[data-voltar]").forEach((botao) => {
+    botao.addEventListener("click", () => Router.back());
+  });
+
+  document.querySelectorAll("[data-home]").forEach((botao) => {
+    botao.addEventListener("click", () => Router.navigate("estudante"));
+  });
+}
+
+/**
+ * Liga uma lista de botões de menu com um listener só.
+ * Botões com data-em-breve="1" ainda não têm tela: em vez de
+ * navegar, mostram um aviso.
+ */
+function ligarMenu(containerId, avisoId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.addEventListener("click", (event) => {
+    const botao = event.target.closest("[data-ir]");
+    if (!botao) return;
+
+    const destino = botao.dataset.ir;
+    const nome = botao.querySelector(".nav-label").textContent.trim();
+
+    if (botao.dataset.emBreve === "1") {
+      const aviso = document.getElementById(avisoId);
+      if (aviso) {
+        aviso.textContent = `a tela de "${nome}" ainda não foi feita.`;
+        aviso.hidden = false;
+      }
+      return;
+    }
+
+    Router.navigate(destino);
+  });
+}
+
+/** Chave usada para separar os dados salvos por conta. */
+function chaveDaConta() {
+  const conta = state.contaAtual || Storage.contaLogada();
+  return conta ? `${conta.cpf}:${conta.role.id}` : "convidado";
+}
+
+/* ---------------------------------------------------------
+   TELA: ÁREA DO ESTUDANTE (menu principal)
+   --------------------------------------------------------- */
+function initEstudante() {
+  ligarMenu("estudante-menu", "estudante-aviso");
+
+  // Aqui a casinha volta para o painel com os dados da conta
+  document.getElementById("btn-home-estudante").addEventListener("click", () => {
+    Router.navigate("dashboard");
+  });
+}
+
+/* ---------------------------------------------------------
+   TELA: PÁGINA PESSOAL
+   --------------------------------------------------------- */
+function initPaginaPessoal() {
+  ligarNavegacao();
+  ligarMenu("pessoal-menu", null);
+}
+
+/* ---------------------------------------------------------
+   TELA: SALA DO ALUNO
+   --------------------------------------------------------- */
+function initSalaAluno() {
+  ligarNavegacao();
+  ligarMenu("sala-menu", "sala-aviso");
+}
+
+/* ---------------------------------------------------------
+   TELA: GRUPOS ESTUDANTIS
+   --------------------------------------------------------- */
+function initGrupos() {
+  ligarNavegacao();
+  ligarMenu("grupos-menu", "grupos-aviso");
+
+  document.getElementById("btn-novo-grupo").addEventListener("click", () => {
+    const aviso = document.getElementById("grupos-aviso");
+    aviso.textContent = "a tela de criar grupo ainda não foi feita.";
+    aviso.hidden = false;
+  });
+}
+
+/* ---------------------------------------------------------
+   TELA: BOLETIM
+   --------------------------------------------------------- */
+function initBoletim() {
+  ligarNavegacao();
+
+  const conta = state.contaAtual || Storage.contaLogada();
+  document.getElementById("boletim-aluno").textContent =
+    `${conta.username} — ${conta.escolaridade || "escolaridade não informada"}`;
+}
+
+/* ---------------------------------------------------------
+   TELAS: ANOTAÇÕES E INFORMAÇÕES
+   As duas são iguais, só muda onde o texto é salvo.
+   --------------------------------------------------------- */
+function initTextoLivre(nome) {
+  ligarNavegacao();
+
+  const campo = document.getElementById(`campo-${nome}`);
+  const aviso = document.getElementById(`${nome}-salvo`);
+  const chave = `${nome}:${chaveDaConta()}`;
+
+  // Traz de volta o que já tinha sido escrito
+  campo.value = Storage.lerDado(chave, "");
+
+  // Salva enquanto digita (com uma pausa, para não gravar a
+  // cada tecla)
+  let timer = null;
+  campo.addEventListener("input", () => {
+    clearTimeout(timer);
+    aviso.textContent = "escrevendo...";
+    timer = setTimeout(() => {
+      Storage.salvarDado(chave, campo.value);
+      aviso.textContent = "salvo automaticamente neste navegador";
+    }, 400);
+  });
+}
+
+/* ---------------------------------------------------------
+   TELA: CALENDÁRIO DE ATIVIDADES
+   --------------------------------------------------------- */
+function initCalendario() {
+  ligarNavegacao();
+
+  const lista = document.getElementById("lista-meses");
+  const aviso = document.getElementById("calendario-aviso");
+
+  lista.addEventListener("click", (event) => {
+    const botao = event.target.closest(".month-btn");
+    if (!botao) return;
+
+    lista.querySelectorAll(".month-btn").forEach((b) => b.classList.remove("ativo"));
+    botao.classList.add("ativo");
+
+    aviso.textContent = `a tela de ${botao.textContent} ainda não foi feita.`;
+    aviso.hidden = false;
+  });
+}
+
+/* ---------------------------------------------------------
+   CHATS
+   As mensagens ficam salvas por conta, como uma lista:
+   [{ texto, minha }, ...]
+   --------------------------------------------------------- */
+
+/** Troca < e > por código, para o texto digitado não virar HTML. */
+function escaparTexto(texto) {
+  return String(texto).replace(/[&<>]/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])
+  );
+}
+
+/** Desenha a lista de mensagens dentro de um elemento. */
+function desenharChat(listaEl, mensagens) {
+  listaEl.innerHTML = mensagens
+    .map(
+      (m) => `
+      <div class="chat-row ${m.minha ? "eu" : ""}">
+        <span class="chat-avatar">👤</span>
+        <div class="chat-bubble ${m.minha ? "chat-verde" : "chat-azul"}">${escaparTexto(m.texto)}</div>
+      </div>`
+    )
+    .join("");
+
+  listaEl.scrollTop = listaEl.scrollHeight; // desce até a última
+}
+
+function initChatSala() {
+  ligarNavegacao();
+
+  const listaEl = document.getElementById("chat-sala-lista");
+  const campo = document.getElementById("chat-sala-campo");
+  const chave = `chat-sala:${chaveDaConta()}`;
+
+  // Se for a primeira vez, começa com duas mensagens de exemplo
+  let mensagens = Storage.lerDado(chave, null);
+  if (!mensagens) {
+    mensagens = [
+      { texto: "bom dia, turma!", minha: false },
+      { texto: "alguém anotou a tarefa de matemática?", minha: false },
+    ];
+    Storage.salvarDado(chave, mensagens);
+  }
+
+  desenharChat(listaEl, mensagens);
+
+  function enviar() {
+    const texto = campo.value.trim();
+    if (!texto) return;
+
+    mensagens.push({ texto, minha: true });
+    Storage.salvarDado(chave, mensagens);
+    desenharChat(listaEl, mensagens);
+    campo.value = "";
+  }
+
+  document.getElementById("chat-sala-enviar").addEventListener("click", enviar);
+  campo.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") enviar();
+  });
+}
+
+function initChatGerencia() {
+  ligarNavegacao();
+
+  // Só leitura: o aluno não envia nada por aqui
+  desenharChat(document.getElementById("chat-gerencia-lista"), [
+    { texto: "reunião de pais na sexta, às 19h.", minha: false },
+    { texto: "as provas do 3º bimestre começam dia 20.", minha: false },
+    { texto: "a biblioteca ficará fechada na segunda.", minha: false },
+  ]);
 }
 
 /* =========================================================

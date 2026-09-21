@@ -28,11 +28,6 @@ PAGES.dashboard = `
     <div class="data-card"><p class="data-label">Escolaridade</p><p class="data-value" id="dash-escolaridade">—</p></div>
   </div>
 
-  <!-- Leva às telas novas (área do estudante) -->
-  <button class="btn btn-green btn-area-estudante" id="btn-abrir-estudante">
-    entrar na área do estudante
-  </button>
-
   <!-- Data/hora em que a conta foi salva -->
   <p class="storage-note" id="dash-criado-em"></p>
 

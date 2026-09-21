@@ -477,3 +477,327 @@ select {
     justify-content: center;
   }
 }
+
+/* =========================================================
+   ÁREA DO ESTUDANTE
+   ---------------------------------------------------------
+   Estilos das telas novas (área do estudante, sala do aluno,
+   página pessoal, boletim, anotações, grupos, calendário e
+   chats). Todas seguem o mesmo esqueleto:
+
+     .screen-app  → tela sem padding, para a barra verde
+                    poder ocupar a largura inteira
+     .app-bar     → barra verde com o título e o ☰
+     .back-row    → linha do "← voltar"
+     .card-body   → cartão branco com o conteúdo
+   ========================================================= */
+.screen-app {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #0a7d4f;
+  color: #ffffff;
+  padding: 12px 16px;
+}
+.app-bar-title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+.app-bar-menu {
+  background: none;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1;
+  padding: 2px 4px;
+}
+
+.back-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+}
+.btn-voltar {
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d1d1d;
+}
+/* Botãozinho "+" redondo da tela de grupos */
+.btn-mais {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #4d7ef3;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cartão branco onde fica o conteúdo da tela */
+.card-body {
+  background: #ffffff;
+  border-radius: 10px;
+  margin: 0 12px 12px;
+  padding: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+/* Quando a tela não tem "voltar", o cartão precisa do
+   espaço de cima */
+.screen-app > .app-bar + .card-body,
+.screen-app > .hero-illustration + .card-body {
+  margin-top: 12px;
+}
+
+/* ---------- Ilustração da área do estudante ---------- */
+.hero-illustration {
+  position: relative;
+  margin: 12px 12px 0;
+  height: 96px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ffe0a3, #ffc2c9 60%, #ffd6e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-student { font-size: 46px; }
+.hero-emoji {
+  position: absolute;
+  font-size: 17px;
+}
+.hero-emoji-1 { top: 10px;  left: 16px; }
+.hero-emoji-2 { top: 8px;   left: 52%; }
+.hero-emoji-3 { top: 14px;  right: 22px; }
+.hero-emoji-4 { bottom: 10px; left: 26px; }
+.hero-emoji-5 { bottom: 8px;  right: 26px; }
+.hero-emoji-6 { bottom: 34px; right: 12px; }
+
+/* ---------- Botões de navegação (com a setinha) ---------- */
+.nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  transition: filter 0.15s, transform 0.05s;
+}
+.nav-btn:hover { filter: brightness(0.94); }
+.nav-btn:active { transform: scale(0.99); }
+.nav-blue  { background: #4d7ef3; }
+.nav-green { background: #0a7d4f; }
+.nav-label { flex: 1; text-align: left; }
+.nav-arrow { opacity: 0.85; font-size: 14px; }
+
+/* Aviso das telas que ainda não existem */
+.em-breve {
+  margin-top: 14px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 12px;
+  text-align: center;
+}
+
+.lista-vazia {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 12px;
+  margin-top: 24px;
+}
+
+/* Casinha no rodapé do cartão */
+.home-bar {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 18px;
+}
+.home-btn {
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  color: #4b5563;
+}
+.home-btn:hover { color: #111318; }
+
+/* ---------- Anotações e informações ---------- */
+.text-area {
+  width: 100%;
+  flex: 1;
+  min-height: 260px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #1a1d29;
+  background: #ffffff;
+  outline: none;
+  resize: vertical;
+}
+.text-area::placeholder { color: #b8bcc4; }
+.text-area:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+.salvo-aviso {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: right;
+}
+
+/* ---------- Boletim ---------- */
+.boletim-head {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111318;
+  margin-bottom: 10px;
+}
+.table-wrap { overflow-x: auto; }
+.boletim-table {
+  width: 100%;
+  min-width: 420px;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+.boletim-table th,
+.boletim-table td {
+  border: 1px solid #e5e7eb;
+  padding: 6px 8px;
+  text-align: center;
+}
+.boletim-table th {
+  background: #f3f4f6;
+  font-weight: 700;
+  color: #374151;
+}
+.boletim-table td:first-child,
+.boletim-table th:first-child {
+  text-align: left;
+  white-space: nowrap;
+}
+.boletim-legenda {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* ---------- Calendário ---------- */
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.month-btn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 4px;
+  font-size: 12px;
+  color: #1a1d29;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.month-btn:hover { border-color: #4d7ef3; }
+.month-btn.ativo {
+  border-color: #0a7d4f;
+  box-shadow: 0 0 0 2px rgba(10, 125, 79, 0.15);
+}
+
+/* ---------- Chats ---------- */
+.chat-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 14px 8px;
+}
+.chat-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+.chat-row.eu { flex-direction: row-reverse; }
+.chat-avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+.chat-bubble {
+  max-width: 72%;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #ffffff;
+  word-break: break-word;
+}
+.chat-azul  { background: #4d7ef3; }
+.chat-verde { background: #0a7d4f; }
+
+.chat-compose {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 12px 12px;
+  padding: 6px 6px 6px 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+}
+.chat-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+  color: #1a1d29;
+}
+.chat-input::placeholder { color: #9ca3af; }
+.chat-send {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #4d7ef3;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Botão de entrada na área do estudante, no painel */
+.btn-area-estudante {
+  margin-top: 18px;
+  width: 100%;
+}
