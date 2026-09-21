@@ -1,0 +1,137 @@
+body{
+    margin: 0;
+    left: 0;
+    background: #EFEFEF;
+}
+
+#header-principal{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #096748;
+    width: 96vw;
+    padding: 2vw;
+    height: 5vh;
+}
+
+#menu-sanduiche{
+    width: 10vw;
+    filter: invert(1);
+}
+
+#imagem-pagina-inicial-aluno{
+    width: 70vw;
+    height: 50vw;
+    display: flex;
+    align-items: center;
+    background: gray;
+    margin: 2vw 0 3vw 0;
+    padding-left: 2vw;
+    box-sizing: border-box;
+}
+
+.texto-voltar{
+    margin: 0;
+    font-size: 5vw;
+    font-weight: 700;
+    color: #0C3A2B;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+    display: inline-block;
+}
+
+.container-site{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#container-meio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70vw;
+    background: #FFFF;
+}
+
+#escolha-paginas{
+    gap: 2vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.opção-azul{
+    background: #4A7FF3;
+    width: 93%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+}
+
+.opção-verde{
+    background: #096748;
+    width: 93%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+}
+
+.opção-verde h1, .opção-azul h1{
+    margin-left: 6vw;
+}
+
+.paginas-botoes{
+    font-size: 2.5vw;
+    color: white;    
+}
+
+@media (max-width: 768px){
+
+    #menu-sanduiche{
+        width: 10vw;
+        height: 10vw;
+        filter: invert(1);
+    }
+
+    #texto-header1 h1{
+        font-size: 4.5vw;
+
+    }
+
+    #imagem-pagina-inicial-aluno{
+        width: 94vw;
+        height: 50vw;
+        background: gray;
+    }
+
+    #escolha-paginas{
+        width: 94vw;
+        height: 60vh;
+        margin: 0 0 7vw 0;
+        border-radius: 5vw;
+        /* color: white; */
+        box-shadow: 0 1.5vw 2vw 0.3vw rgb(215, 215, 215);
+    }
+
+    .opção-azul{    
+        margin: -1vw 0 -1vw 0;
+        border-radius: 3vw;
+        box-shadow: 0 1vw 1.5vw 0.3vw rgb(215, 215, 215);
+    }
+
+    .opção-verde{
+        border-radius: 3vw;
+        box-shadow: 0 1vw 1.5vw 0.3vw rgb(215, 215, 215);
+    }
+
+    .paginas-botoes{
+        font-size: 2vw;
+    }
+
+}
