@@ -8,10 +8,6 @@
 PAGES.cadastro = `
 <section class="screen" id="screen-cadastro">
 
-  <div class="screen-top">
-    <span class="clock">9:30</span>
-  </div>
-
   <header class="screen-header">
     <h1 class="title-md">criação de conta</h1>
     <button class="link-back" id="btn-cadastro-back">← voltar</button>

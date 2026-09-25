@@ -9,10 +9,6 @@
 PAGES.role = `
 <section class="screen" id="screen-role">
 
-  <div class="screen-top">
-    <span class="clock">9:30</span>
-  </div>
-
   <header class="screen-header">
     <h1 class="title-md" id="role-title">área de login</h1>
     <button class="link-back" id="btn-role-back">← voltar</button>
