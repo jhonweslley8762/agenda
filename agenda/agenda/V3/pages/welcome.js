@@ -9,10 +9,6 @@
 PAGES.welcome = `
 <section class="screen" id="screen-welcome">
 
-  <div class="screen-top">
-    <span class="clock">9:30</span>
-  </div>
-
   <!-- Ilustração simples feita com dois "balões" coloridos -->
   <div class="welcome-illustration">
     <div class="bubble bubble-blue">📖</div>
@@ -24,13 +20,6 @@ PAGES.welcome = `
     para acessar a agenda, você precisa de uma conta. se já tem uma, faça login.
     caso contrário, cadastre-se abaixo.
   </p>
-
-  <!-- Aparece só quando existe uma sessão salva no navegador:
-       permite voltar ao painel sem digitar a senha de novo -->
-  <div class="hint hint-info" id="welcome-sessao" hidden>
-    <span id="welcome-sessao-texto"></span>
-    <button class="link-inline" id="btn-continuar-sessao">continuar</button>
-  </div>
 
   <div class="stack">
     <button class="btn btn-blue" id="btn-go-login">login com usuário e senha</button>

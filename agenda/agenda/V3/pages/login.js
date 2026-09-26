@@ -8,10 +8,6 @@
 PAGES.login = `
 <section class="screen" id="screen-login">
 
-  <div class="screen-top">
-    <span class="clock">9:30</span>
-  </div>
-
   <header class="screen-header">
     <h1 class="title-md" id="login-title">login</h1>
     <button class="link-back" id="btn-login-back">← voltar</button>

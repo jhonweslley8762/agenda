@@ -79,6 +79,7 @@ window.onScreenLoaded = function (name) {
     case "calendario":      initCalendario();     break;
     case "chat-sala":       initChatSala();       break;
     case "chat-gerencia":   initChatGerencia();   break;
+    case "pagina-escolar": initPaginaEscolar(); break;
 
     default:          Router.replace("welcome");
   }
@@ -106,6 +107,7 @@ function podeAbrir(name) {
     case "calendario":
     case "chat-sala":
     case "chat-gerencia":
+    case "pagina-escolar":
       // Aqui vale a conta em memória OU a sessão salva no navegador
       return Boolean(state.contaAtual || Storage.contaLogada());
     default:
@@ -671,4 +673,9 @@ if (contaSalva) {
   Router.start("dashboard");
 } else {
   Router.start("welcome");
+}
+
+function initPaginaEscolar() {
+  ligarNavegacao();
+  ligarMenu("estudante-menu", "estudante-aviso");
 }

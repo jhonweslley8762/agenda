@@ -31,7 +31,7 @@ PAGES.estudante = `
 
   <div class="card-body" id="estudante-menu">
     <div class="stack">
-      <button class="nav-btn nav-blue" data-ir="pagina-escolar" data-em-breve="1">
+      <button class="nav-btn nav-blue" data-ir="pagina-escolar">
         <span class="nav-icon">👤</span>
         <span class="nav-label">página escolar</span>
         <span class="nav-arrow">›</span>
