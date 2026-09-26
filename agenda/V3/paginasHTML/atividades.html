@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atividades - Agenda Escolar</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <style>
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================= */
+
+        body {
+            background-color: #111827;
+            color: white;
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           TÍTULO
+        ========================= */
+
+        h1 {
+            margin-bottom: 8px;
+        }
+
+        header p {
+            margin-bottom: 28px;
+            color: #d1d5db;
+        }
+
+
+        /* =========================
+           MATÉRIAS
+        ========================= */
+
+        details {
+            margin-bottom: 14px;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+
+        summary {
+            height: 74px;
+            padding: 0 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            cursor: pointer;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            list-style: none;
+        }
+
+
+        /* Remove seta padrão */
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+
+        /* =========================
+           ÍCONE + NOME
+        ========================= */
+
+        summary i:first-child {
+            margin-right: 12px;
+        }
+
+
+        /* =========================
+           CORES DAS MATÉRIAS
+        ========================= */
+
+        details:nth-child(odd) summary {
+            background-color: #2864e6;
+        }
+
+        details:nth-child(even) summary {
+            background-color: #20a269;
+        }
+
+
+        /* =========================
+           SETA
+        ========================= */
+
+        summary .bi-chevron-right {
+            transition: 0.2s;
+        }
+
+        details[open] summary .bi-chevron-right {
+            transform: rotate(90deg);
+        }
+
+
+        /* =========================
+           ÁREA DAS ATIVIDADES
+        ========================= */
+
+        details > div {
+            background-color: #182233;
+            padding: 14px;
+        }
+
+
+        /* =========================
+           CARD DA ATIVIDADE
+        ========================= */
+
+        article {
+            background-color: #202c3d;
+
+            border: 1px solid #52657d;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin-bottom: 12px;
+        }
+
+
+        article:last-child {
+            margin-bottom: 0;
+        }
+
+
+        article h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+
+        article p {
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+
+        /* =========================
+           PRAZO
+        ========================= */
+
+        article p:last-child {
+            display: inline-block;
+
+            background-color: #37465a;
+
+            padding: 8px 12px;
+
+            border-radius: 7px;
+
+            margin-top: 12px;
+        }
+
+
+        /* =========================
+           ÍCONE DO CALENDÁRIO
+        ========================= */
+
+        article .bi-calendar-event {
+            margin-right: 5px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Atividades
+        </h1>
+
+        <p>
+            Selecione uma matéria para visualizar as atividades.
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================
+             MATEMÁTICA
+        ========================== -->
+
+        <details>
+
+            <summary>
+
+                <span>
+
+                    <i class="bi bi-rulers"></i>
+
+                    Matemática
+
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </summary>
+
+
+            <div>
+
+                <article>
+
+                    <h3>
+                        Equação do 2º grau
+                    </h3>
+
+                    <p>
+                        <strong>Professor:</strong>
+                        João Silva
+                    </p>
+
+                    <p>
+                        <strong>Turma:</strong>
+                        1º Ano A
+                    </p>
+
+                    <p>
+                        Resolver os exercícios da página 45
+                        do livro de matemática.
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <strong>Prazo:</strong>
+                        30/09/2026
+
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Funções matemáticas
+                    </h3>
+
+                    <p>
+                        <strong>Professor:</strong>
+                        João Silva
+                    </p>
+
+                    <p>
+                        <strong>Turma:</strong>
+                        1º Ano A
+                    </p>
+
+                    <p>
+                        Fazer os exercícios sobre funções
+                        apresentados em sala.
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <strong>Prazo:</strong>
+                        05/10/2026
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </details>
+
+
+        <!-- =========================
+             PORTUGUÊS
+        ========================== -->
+
+        <details>
+
+            <summary>
+
+                <span>
+
+                    <i class="bi bi-book"></i>
+
+                    Português
+
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </summary>
+
+
+            <div>
+
+                <article>
+
+                    <h3>
+                        Produção textual
+                    </h3>
+
+                    <p>
+                        <strong>Professor:</strong>
+                        Ana Oliveira
+                    </p>
+
+                    <p>
+                        <strong>Turma:</strong>
+                        1º Ano A
+                    </p>
+
+                    <p>
+                        Produzir uma redação sobre o tema
+                        apresentado em sala.
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <strong>Prazo:</strong>
+                        10/10/2026
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </details>
+
+
+        <!-- =========================
+             GEOGRAFIA
+        ========================== -->
+
+        <details>
+
+            <summary>
+
+                <span>
+
+                    <i class="bi bi-globe-americas"></i>
+
+                    Geografia
+
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </summary>
+
+
+            <div>
+
+                <article>
+
+                    <h3>
+                        Climas do Brasil
+                    </h3>
+
+                    <p>
+                        <strong>Professor:</strong>
+                        Maria Santos
+                    </p>
+
+                    <p>
+                        <strong>Turma:</strong>
+                        1º Ano A
+                    </p>
+
+                    <p>
+                        Pesquisar os principais tipos de clima
+                        encontrados no Brasil.
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <strong>Prazo:</strong>
+                        02/10/2026
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </details>
+
+
+        <!-- =========================
+             HISTÓRIA
+        ========================== -->
+
+        <details>
+
+            <summary>
+
+                <span>
+
+                    <i class="bi bi-bookshelf"></i>
+
+                    História
+
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </summary>
+
+
+            <div>
+
+                <article>
+
+                    <h3>
+                        Revolução Francesa
+                    </h3>
+
+                    <p>
+                        <strong>Professor:</strong>
+                        Carlos Oliveira
+                    </p>
+
+                    <p>
+                        <strong>Turma:</strong>
+                        1º Ano A
+                    </p>
+
+                    <p>
+                        Elaborar um resumo sobre a
+                        Revolução Francesa.
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <strong>Prazo:</strong>
+                        07/10/2026
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </details>
+
+
+        <!-- =========================
+             BIOLOGIA
+        ========================== -->
+
+        <details>
+
+            <summary>
+
+                <span>
+
+                    <i class="bi bi-dna"></i>
+
+                    Biologia
+
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </summary>
+
+
+            <div>
+
+                <article>
+
+                    <h3>
+                        Células e suas funções
+                    </h3>
+
+                    <p>
+                        <strong>Professor:</strong>
+                        Pedro Alves
+                    </p>
+
+                    <p>
+                        <strong>Turma:</strong>
+                        1º Ano A
+                    </p>
+
+                    <p>
+                        Identificar as principais organelas
+                        e suas funções.
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <strong>Prazo:</strong>
+                        08/10/2026
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </details>
+
+
+        <!-- =========================
+             FÍSICA
+        ========================== -->
+
+        <details>
+
+            <summary>
+
+                <span>
+
+                    <i class="bi bi-atom"></i>
+
+                    Física
+
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </summary>
+
+
+            <div>
+
+                <article>
+
+                    <h3>
+                        Leis de Newton
+                    </h3>
+
+                    <p>
+                        <strong>Professor:</strong>
+                        Lucas Mendes
+                    </p>
+
+                    <p>
+                        <strong>Turma:</strong>
+                        1º Ano A
+                    </p>
+
+                    <p>
+                        Resolver os exercícios sobre
+                        as Leis de Newton.
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <strong>Prazo:</strong>
+                        09/10/2026
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </details>
+
+
+        <!-- =========================
+             QUÍMICA
+        ========================== -->
+
+        <details>
+
+            <summary>
+
+                <span>
+
+                    <i class="bi bi-eyedropper"></i>
+
+                    Química
+
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </summary>
+
+
+            <div>
+
+                <article>
+
+                    <h3>
+                        Tabela periódica
+                    </h3>
+
+                    <p>
+                        <strong>Professor:</strong>
+                        Fernanda Costa
+                    </p>
+
+                    <p>
+                        <strong>Turma:</strong>
+                        1º Ano A
+                    </p>
+
+                    <p>
+                        Pesquisar sobre os principais
+                        elementos da tabela periódica.
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <strong>Prazo:</strong>
+                        11/10/2026
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </details>
+
+
+        <!-- =========================
+             INGLÊS
+        ========================== -->
+
+        <details>
+
+            <summary>
+
+                <span>
+
+                    <i class="bi bi-translate"></i>
+
+                    Inglês
+
+                </span>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </summary>
+
+
+            <div>
+
+                <article>
+
+                    <h3>
+                        Simple Present
+                    </h3>
+
+                    <p>
+                        <strong>Professor:</strong>
+                        Gabriel Souza
+                    </p>
+
+                    <p>
+                        <strong>Turma:</strong>
+                        1º Ano A
+                    </p>
+
+                    <p>
+                        Resolver as atividades sobre
+                        Simple Present.
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <strong>Prazo:</strong>
+                        13/10/2026
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </details>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Agenda Escolar © 2026
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
