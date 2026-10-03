@@ -7,6 +7,53 @@
   padding: 0;
 }
 
+#botao-editar-curriculo{
+  margin-left: 90%;
+  background: #4d7ef3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4vw;
+  height: 3vw;
+  border-radius: 1vw;
+}
+
+.lista-nao-ordenada-curriculo-professor{
+  margin-left: 2vw;
+  gap: 1vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-mensagem{
+  width: 33vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw
+}
+
+/*quadrado com cor aleatório para foto de currículo
+Será removido mais para a frente do projeto para ser adicionada a foto real.*/
+
+.container-header-curriculo{
+  width: 100%;
+  height: 11vw;
+  background: orange;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 2.5vw;
+  padding: 1vw;
+  border-radius: 1.5vw;
+}
+
+.imagem-curriculo{
+  width: 9vw;
+  height: 9vw;
+  background: gray;
+  border-radius: 1.5vw;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background: #d3d3d3;
@@ -605,6 +652,7 @@ select {
 .nav-btn:active { transform: scale(0.99); }
 .nav-blue  { background: #4d7ef3; }
 .nav-green { background: #0a7d4f; }
+.nav-yellow { background: #FF9500; }
 .nav-label { flex: 1; text-align: left; }
 .nav-arrow { opacity: 0.85; font-size: 14px; }
 
