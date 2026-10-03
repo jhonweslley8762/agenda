@@ -84,6 +84,8 @@ window.onScreenLoaded = function (name) {
         case "atividades": initAtividadesAluno(); break;
         case "professor": initPaginaProfessor(); break;
         case "gestao": initPaginaGestao(); break;
+        case "curriculo": initCurriculo(); break;
+        case "pagina-pessoal-professor": initPaginaPessoalProfessores(); break;
 
         default: Router.replace("welcome");
     }
@@ -116,6 +118,8 @@ function podeAbrir(name) {
         case "horario-turmas":
         case "atividades":
         case "gestao":
+        case "curriculo":
+        case "pagina-pessoal-professor":
             // Aqui vale a conta em memória OU a sessão salva no navegador
             return Boolean(state.contaAtual || Storage.contaLogada());
         default:
@@ -721,6 +725,11 @@ function initPaginaProfessor() {
     document.getElementById("btn-home-professor").addEventListener("click", () => {
         Router.navigate("dashboard");
     });
+}
+
+function initPaginaPessoalProfessores() {
+    ligarNavegacao()
+    ligarMenu("professor-menu", "professor-aviso");
 }
 
 function initPaginaGestao() {

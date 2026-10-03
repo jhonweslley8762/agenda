@@ -1,0 +1,40 @@
+PAGES["pag-escolar.professor.js"] = 
+
+`<section class="screen screen-app" id="screen-estudante">
+
+    <header class="app-bar-professor">
+        <span class="app-bar-title">página escolar</span>
+        <button class="app-bar-menu" aria-label="menu">☰</button>
+    </header>
+
+    <div class="back-row">
+        <button class="btn-voltar" data-voltar>← voltar</button>
+    </div>
+
+    <div class="card-body" id="estudante-menu">
+        <div class="stack">
+            <button class="nav-btn nav-blue" data-ir="comunicados-escola-prof" data-em-breve="1">
+                <span class="nav-icon">💬</span>
+                <span class="nav-label">comunicados da escola</span>
+                <span class="nav-arrow">›</span>
+            </button>
+
+            <button class="nav-btn nav-yellow" data-ir="turmas-prof" data-em-breve="1">
+                <span class="nav-icon">👥</span>
+                <span class="nav-label">turmas</span>
+                <span class="nav-arrow">›</span>
+            </button>
+
+            <button class="nav-btn nav-blue" data-ir="pagina-escolar-prof">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">página escolar</span>
+                <span class="nav-arrow">›</span>
+            </button>
+        </div>
+
+        <p class="em-breve" id="estudante-aviso" hidden></p>
+
+        <div class="home-bar">
+            <button class="home-btn" id="btn-home-estudante" aria-label="início" data-home>⌂</button>
+        </div>
+    </div>`;

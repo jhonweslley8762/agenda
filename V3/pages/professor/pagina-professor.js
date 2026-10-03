@@ -18,7 +18,7 @@ PAGES["professor"] = `
 
     <div class="card-body" id="professor-menu">
         <div class="stack">
-            <button class="nav-btn nav-blue" data-ir="pagina-pessoal-professor" data-em-breve="1">
+            <button class="nav-btn nav-blue" data-ir="pagina-pessoal-professor">
                 <span class="nav-icon">👤</span>
                 <span class="nav-label">página pessoal</span>
                 <span class="nav-arrow">›</span>
