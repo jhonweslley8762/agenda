@@ -12,23 +12,23 @@ PAGES["horario-turmas"] =
 
         <div class="card-body" id="estudante-menu">
             <div class="stack">
-                <button class="nav-btn nav-blue" data-ir="segunda-aluno" data-em-breve="1">
+                <button class="nav-btn nav-blue" data-ir="horario">
                     <span class="nav-label">Segunda-feira</span>
                     <span class="nav-arrow">›</span>
                 </button>
-                <button class="nav-btn nav-green" data-ir="terca-aluno" data-em-breve="1">
+                <button class="nav-btn nav-green" data-ir="horario">
                     <span class="nav-label">Terça-feira</span>
                     <span class="nav-arrow">›</span>
                 </button>
-                <button class="nav-btn nav-blue" data-ir="quarta-aluno" data-em-breve="1">
+                <button class="nav-btn nav-blue" data-ir="horario">
                     <span class="nav-label">Quarta-feira</span>
                     <span class="nav-arrow">›</span>
                 </button>
-                <button class="nav-btn nav-green" data-ir="quinta-aluno" data-em-breve="1">
+                <button class="nav-btn nav-green" data-ir="horario">
                     <span class="nav-label">Quinta-feira</span>
                     <span class="nav-arrow">›</span>
                 </button>
-                <button class="nav-btn nav-blue" data-ir="sexta-aluno" data-em-breve="1">
+                <button class="nav-btn nav-blue" data-ir="horario">
                     <span class="nav-label">Sexta-feira</span>
                     <span class="nav-arrow">›</span>
                 </button>

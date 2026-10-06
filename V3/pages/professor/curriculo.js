@@ -1,4 +1,4 @@
-PAGES.curriculo = 
+PAGES["curriculo-professor"] = 
 
 `<section class="screen screen-app" id="screen-estudante">
 
@@ -45,10 +45,10 @@ PAGES.curriculo =
             
             </div>
 
-            <p class="em-breve" id="estudante-aviso" hidden></p>
+            <p class="em-breve" id="professor-aviso" hidden></p>
 
             <div class="home-bar">
-                <button class="home-btn" id="btn-home-estudante" aria-label="início" data-home>⌂</button>
+                <button class="home-btn" id="btn-home-professor" aria-label="início" data-home>⌂</button>
             </div>
         </div>
         `;

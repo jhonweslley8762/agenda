@@ -1,7 +1,7 @@
 PAGES["gestao"] = `
 <section class="screen screen-app" id="screen-gestao">
 
-    <header class="app-bar-professor">
+    <header class="app-bar-gestao">
         <span class="app-bar-title">página da gestão</span>
         <button class="app-bar-menu" aria-label="menu">☰</button>
     </header>
@@ -21,17 +21,6 @@ PAGES["gestao"] = `
             <button class="nav-btn nav-blue" data-ir="pagina-pessoal-gestao" data-em-breve="1">
                 <span class="nav-icon">👤</span>
                 <span class="nav-label">Escolas</span>
-                <span class="nav-arrow">›</span>
-            </button>
-
-            <button class="nav-btn nav-green" data-ir="escolas-gestao" data-em-breve="1">
-                <span class="nav-icon">👥</span>
-                <span class="nav-label">Professores</span>
-                <span class="nav-arrow">›</span>
-            </button>
-            <button class="nav-btn nav-blue" data-ir="escolas-gestao" data-em-breve="1">
-                <span class="nav-icon">👥</span>
-                <span class="nav-label">Biblioteca</span>
                 <span class="nav-arrow">›</span>
             </button>
         </div>

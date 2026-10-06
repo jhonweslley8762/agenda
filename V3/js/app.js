@@ -81,10 +81,11 @@ window.onScreenLoaded = function (name) {
         case "chat-gerencia": initChatGerencia(); break;
         case "pagina-escolar": initPaginaEscolar(); break;
         case "horario-turmas": initHorarioTurmas(); break;
+        case "horario": initQuadroHorario(); break;
         case "atividades": initAtividadesAluno(); break;
         case "professor": initPaginaProfessor(); break;
         case "gestao": initPaginaGestao(); break;
-        case "curriculo": initCurriculo(); break;
+        case "curriculo-professor": initCurriculo(); break;
         case "pagina-pessoal-professor": initPaginaPessoalProfessores(); break;
 
         default: Router.replace("welcome");
@@ -116,9 +117,10 @@ function podeAbrir(name) {
         case "chat-gerencia":
         case "pagina-escolar":
         case "horario-turmas":
+        case "horario":
         case "atividades":
         case "gestao":
-        case "curriculo":
+        case "curriculo-professor":
         case "pagina-pessoal-professor":
             // Aqui vale a conta em memória OU a sessão salva no navegador
             return Boolean(state.contaAtual || Storage.contaLogada());
@@ -712,6 +714,12 @@ function initHorarioTurmas() {
     ligarMenu("estudante-menu", "estudante-aviso")
 }
 
+function initQuadroHorario(){
+    ligarNavegacao()
+    ligarMenu("estudante-menu", "estudante-aviso")
+}
+
+
 function initAtividadesAluno() {
     ligarNavegacao()
     ligarMenu("estudante-menu", "estudante-aviso")
@@ -730,6 +738,17 @@ function initPaginaProfessor() {
 function initPaginaPessoalProfessores() {
     ligarNavegacao()
     ligarMenu("professor-menu", "professor-aviso");
+    document.getElementById("btn-home-professor").addEventListener("click", () => {
+        Router.navigate("professor");
+    });
+}
+
+function initCurriculo() {
+    ligarNavegacao()
+    ligarMenu("professor-menu", "professor-aviso");
+    document.getElementById("btn-home-professor").addEventListener("click", () => {
+        Router.navigate("professor");
+    });
 }
 
 function initPaginaGestao() {

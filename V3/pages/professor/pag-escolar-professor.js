@@ -1,4 +1,4 @@
-PAGES["pag-escolar.professor.js"] = 
+PAGES["pagina-escolar-professor"] = 
 
 `<section class="screen screen-app" id="screen-estudante">
 
@@ -37,4 +37,4 @@ PAGES["pag-escolar.professor.js"] =
         <div class="home-bar">
             <button class="home-btn" id="btn-home-estudante" aria-label="início" data-home>⌂</button>
         </div>
-    </div>`;
+</div>`;
