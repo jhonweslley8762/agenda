@@ -7,6 +7,11 @@
   padding: 0;
 }
 
+#barra-atividades-professor{
+  display: grid;
+  grid-template-columns: repeat(3, 5vw);
+}
+
 #botao-editar-curriculo{
   margin-left: 90%;
   background: #4d7ef3;
