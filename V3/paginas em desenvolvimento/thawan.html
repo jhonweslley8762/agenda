@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Página da Escola - Agenda Escolar</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <style>
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #111827;
+            color: white;
+            font-family: Arial, sans-serif;
+
+            max-width: 800px;
+            margin: auto;
+
+            padding: 20px;
+        }
+
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        header {
+            background-color: #f97316;
+
+            padding: 18px 22px;
+
+            border-radius: 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 18px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: normal;
+        }
+
+        .menu {
+            background: none;
+            border: none;
+            color: white;
+
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           BANNER
+        ========================= */
+
+        .banner {
+            width: 100%;
+            height: 180px;
+
+            object-fit: cover;
+
+            border-radius: 14px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           VOLTAR
+        ========================= */
+
+        .voltar {
+            display: block;
+
+            color: #d1d5db;
+
+            text-decoration: none;
+
+            margin-bottom: 16px;
+
+            font-size: 14px;
+        }
+
+        .voltar i {
+            margin-right: 6px;
+        }
+
+
+        /* =========================
+           CARD PRINCIPAL
+        ========================= */
+
+        .card {
+            background-color: #111111;
+
+            border-radius: 16px;
+
+            padding: 22px;
+
+            min-height: 350px;
+        }
+
+
+        /* =========================
+           BOTÕES
+        ========================= */
+
+        .botao {
+            width: 100%;
+            height: 52px;
+
+            padding: 0 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border: none;
+            border-radius: 10px;
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-bottom: 12px;
+
+            text-align: left;
+
+            transition: 0.2s;
+        }
+
+        .botao:last-child {
+            margin-bottom: 0;
+        }
+
+        .botao span {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .botao span i {
+            font-size: 19px;
+        }
+
+
+        /* =========================
+           CORES
+        ========================= */
+
+        .azul {
+            background-color: #2864e6;
+        }
+
+        .laranja {
+            background-color: #ff9900;
+        }
+
+
+        /* =========================
+           EFEITOS DOS BOTÕES
+        ========================= */
+
+        .botao:hover {
+            filter: brightness(1.1);
+        }
+
+        .botao:active {
+            transform: scale(0.99);
+        }
+
+        .botao:focus-visible,
+        .menu:focus-visible,
+        .voltar:focus-visible {
+            outline: 2px solid white;
+            outline-offset: 3px;
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            color: #9ca3af;
+
+            font-size: 13px;
+
+            margin-top: 25px;
+        }
+
+        footer i {
+            font-size: 24px;
+        }
+
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 12px;
+            }
+
+            header h1 {
+                font-size: 19px;
+            }
+
+            .banner {
+                height: 150px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .botao {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         CABEÇALHO
+    ========================= -->
+
+    <header>
+
+        <h1>
+            Página da escola
+        </h1>
+
+        <button class="menu" type="button" aria-label="Menu">
+
+            <i class="bi bi-list"></i>
+
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         BANNER DA ESCOLA
+    ========================= -->
+
+    <img
+        class="banner"
+        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+        alt="Ambiente escolar"
+    >
+
+
+    <!-- =========================
+         VOLTAR
+    ========================= -->
+
+    <a href="#" class="voltar">
+
+        <i class="bi bi-arrow-left"></i>
+
+        voltar
+
+    </a>
+
+
+    <!-- =========================
+         CARD DOS BOTÕES
+    ========================= -->
+
+    <main class="card">
+
+
+        <!-- COMUNICADOS DA ESCOLA -->
+
+        <button class="botao azul" type="button">
+
+            <span>
+
+                <i class="bi bi-megaphone"></i>
+
+                Comunicados da escola
+
+            </span>
+
+            <i class="bi bi-chevron-right"></i>
+
+        </button>
+
+
+        <!-- HORÁRIO ESCOLAR -->
+
+        <button class="botao laranja" type="button">
+
+            <span>
+
+                <i class="bi bi-clock"></i>
+
+                Horário escolar
+
+            </span>
+
+            <i class="bi bi-chevron-right"></i>
+
+        </button>
+
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================= -->
+
+    <footer>
+
+        <i class="bi bi-house-door"></i>
+
+        <p>Agenda Escolar © 2026</p>
+
+    </footer>
+
+
+</body>
+
+</html>

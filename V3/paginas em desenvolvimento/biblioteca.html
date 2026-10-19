@@ -1,56 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>biblioteca</title>
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Biblioteca</title>
+
+    <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
-    <header>
-        <div>
-    
-        <nav>
-            <h1>biblioteca</h1>
-         
-            <button type="button">Menu</button>
-        </nav>
-    </header>
+    <section class="screen screen-app" id="screen-gestao">
 
-    <main>
-        
-        <!-- Link de Voltar -->
-        <section>
-            <a href="#">&larr; voltar</a>
-        </section>
+        <!-- Barra superior -->
+        <header class="app-bar-gestao">
 
-        <!-- Container do Painel Central -->
-        <section>
-            
-            <!-- Botão Calendário de Entrega (Azul na imagem) -->
-            <button type="button">
-                <!-- Ícone de calendário ficaria aqui -->
-                calendario de entrega
-                <span>&rsaquo;</span>
+            <span class="app-bar-title">
+                biblioteca
+            </span>
+
+            <button
+                class="app-bar-menu"
+                aria-label="menu">
+                ☰
             </button>
 
-            <br><br>
+        </header>
 
-            <!-- Botão Chat da Biblioteca (Verde na imagem) -->
-            <button type="button">
-                <!-- Ícone de balão de conversa ficaria aqui -->
-                chat da biblioteca
-                <span>&rsaquo;</span>
+
+        <!-- Botão voltar -->
+        <div class="back-row">
+
+            <button
+                class="btn-voltar"
+                data-voltar>
+                ← voltar
             </button>
 
-        </section>
+        </div>
 
-    </main>
 
-    <!-- Barra de Navegação Inferior do Celular -->
-    <footer>
-        <hr> <!-- Linha que simula a barra de arrastar do sistema -->
-    </footer>
+        <!-- Conteúdo principal -->
+        <div
+            class="card-body"
+            id="gestao-menu">
 
-</body>
-</html>
+            <div class="stack">
+
+
+                <!-- Calendário de entrega -->
+                <button
+                    type="button"
+                    class="nav-btn nav-blue"
+                    data-ir="calendario-entrega"
+                    data-em-breve="1">
+
+                    <span class="nav-icon">
+                        📅
+                    </span>
+
+                    <span class="nav-label">
+                        Calendário de entrega
+                    </span>
+
+                    <span class="nav-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <!-- Espaçamento -->
+                <br>
+
+
+                <!-- Chat da biblioteca -->
+                <button
+                    type="button"
+                    class="nav-btn nav-green"
+                    data-ir="chat-biblioteca"
+                    data-em-breve="1">
+
+                    <span class="nav-icon">
+                        💬
+                    </span>
+
+                    <span class="nav-label">
+                        Chat da biblioteca
+                    </span>
+
+                    <span class="nav-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+            <!-- Aviso -->
+            <p
+                class="em-breve"
+                id="estudante-aviso"
+                hidden>
+            </p>
+
+
+            <!-- Barra inferior -->
+            <div class="home-bar">
+            </div>
+
+        </div>
+
+    </
