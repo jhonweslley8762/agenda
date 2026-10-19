@@ -24,7 +24,7 @@ PAGES["professor"] = `
                 <span class="nav-arrow">›</span>
             </button>
 
-            <button class="nav-btn nav-green" data-ir="escolas-professor" data-em-breve="1">
+            <button class="nav-btn nav-green" data-ir="pagina-escolas">
                 <span class="nav-icon">👥</span>
                 <span class="nav-label">escolas</span>
                 <span class="nav-arrow">›</span>

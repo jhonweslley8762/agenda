@@ -87,6 +87,9 @@ window.onScreenLoaded = function (name) {
         case "gestao": initPaginaGestao(); break;
         case "curriculo-professor": initCurriculo(); break;
         case "pagina-pessoal-professor": initPaginaPessoalProfessores(); break;
+        case "pagina-escolas": initPaginaEscolas(); break;
+        case "biblioteca-gestao": initBibliotecaGestao(); break;
+        
 
         default: Router.replace("welcome");
     }
@@ -122,6 +125,8 @@ function podeAbrir(name) {
         case "gestao":
         case "curriculo-professor":
         case "pagina-pessoal-professor":
+        case "pagina-escolas":
+        case "biblioteca-gestao":
             // Aqui vale a conta em memória OU a sessão salva no navegador
             return Boolean(state.contaAtual || Storage.contaLogada());
         default:
@@ -743,6 +748,14 @@ function initPaginaPessoalProfessores() {
     });
 }
 
+function initPaginaEscolas() {
+    ligarNavegacao()
+    ligarMenu("professor-menu", "professor-aviso");
+    document.getElementById("btn-home-professor").addEventListener("click", () => {
+        Router.navigate("professor");
+    });
+}
+
 function initCurriculo() {
     ligarNavegacao()
     ligarMenu("professor-menu", "professor-aviso");
@@ -752,6 +765,14 @@ function initCurriculo() {
 }
 
 function initPaginaGestao() {
+    ligarMenu("gestao-menu", "gestao-aviso");
+
+    document.getElementById("btn-home-gestao").addEventListener("click", () => {
+        Router.navigate("dashboard");
+    });
+}
+
+function initBibliotecaGestao() {
     ligarMenu("gestao-menu", "gestao-aviso");
 
     document.getElementById("btn-home-gestao").addEventListener("click", () => {
