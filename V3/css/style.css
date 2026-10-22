@@ -617,6 +617,12 @@ select {
 }
 
 /* ---------- Ilustração da área do estudante ---------- */
+.img-top {
+
+  max-width: 10px;
+  max-height: 10vw;
+
+}
 .hero-illustration {
   position: relative;
   margin: 12px 12px 0;
