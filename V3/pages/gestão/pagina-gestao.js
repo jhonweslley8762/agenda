@@ -1,3 +1,5 @@
+//esta página virará a página de escolas, já q será a tela inicial da gestão começa na escolha
+
 PAGES["gestao"] = `
 <section class="screen screen-app" id="screen-gestao">
 

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Turmas - Agenda Escolar</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <style>
+
+        /* CONFIGURAÇÕES GERAIS */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: white;
+            font-family: Arial, sans-serif;
+
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+
+        /* CABEÇALHO */
+
+        header {
+            background-color: #2864e6;
+            padding: 18px 22px;
+            border-radius: 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 18px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: normal;
+        }
+
+        .menu {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* BANNER */
+
+        .banner {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 20px;
+        }
+
+
+        /* VOLTAR */
+
+        .voltar {
+            display: block;
+            color: #444444;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .voltar i {
+            margin-right: 6px;
+        }
+
+
+        /* CARD DAS TURMAS */
+
+        .card {
+            background-color: #111111;
+            border-radius: 16px;
+            padding: 22px;
+            min-height: 350px;
+        }
+
+
+        /* ORGANIZAÇÃO DAS SALAS */
+
+        .salas {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+
+        /* BOTÕES DAS SALAS */
+
+        .sala {
+            height: 65px;
+            border: none;
+            border-radius: 12px;
+
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow: 0 3px 7px rgba(0,0,0,0.15);
+            transition: 0.2s;
+        }
+
+
+        /* CORES */
+
+        .azul {
+            background-color: #2864e6;
+        }
+
+        .laranja {
+            background-color: #ff9900;
+        }
+
+
+        /* EFEITOS */
+
+        .sala:hover {
+            filter: brightness(1.1);
+        }
+
+        .sala:active {
+            transform: scale(0.97);
+        }
+
+
+        /* RODAPÉ */
+
+        footer {
+            text-align: center;
+            color: #777777;
+            font-size: 13px;
+            margin-top: 25px;
+        }
+
+        footer i {
+            font-size: 24px;
+        }
+
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 12px;
+            }
+
+            header h1 {
+                font-size: 19px;
+            }
+
+            .banner {
+                height: 150px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .salas {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sala {
+                font-size: 14px;
+                height: 60px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <h1>Turmas</h1>
+
+        <button class="menu" type="button" aria-label="Menu">
+            <i class="bi bi-list"></i>
+        </button>
+
+    </header>
+
+
+    <!-- BANNER DA ESCOLA -->
+
+    <img
+        class="banner"
+        src="https://educamundo.com.br/wp-content/uploads/elementor/thumbs/diversidade-cultural-alunos-colaboracao.webp-r4d3awh8rht2mevbmih0xzctnayo3cwgrdgw397es4.png"
+        alt="Ambiente escolar"
+    >
+
+
+    <!-- VOLTAR -->
+
+    <a href="#" class="voltar">
+
+        <i class="bi bi-arrow-left"></i>
+        voltar
+
+    </a>
+
+
+    <!-- CARD DAS TURMAS -->
+
+    <main class="card">
+
+        <div class="salas">
+
+            <button class="sala azul" type="button">
+                Sala 1
+            </button>
+
+            <button class="sala laranja" type="button">
+                Sala 2
+            </button>
+
+            <button class="sala azul" type="button">
+                Sala 3
+            </button>
+
+            <button class="sala laranja" type="button">
+                Sala 4
+            </button>
+
+            <button class="sala azul" type="button">
+                Sala 5
+            </button>
+
+            <button class="sala laranja" type="button">
+                Sala 6
+            </button>
+
+            <button class="sala azul" type="button">
+                Sala 7
+            </button>
+
+            <button class="sala laranja" type="button">
+                Sala 8
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <i class="bi bi-house-door"></i>
+
+        <p>Agenda Escolar © 2026</p>
+
+    </footer>
+
+</body>
+
+</html>
