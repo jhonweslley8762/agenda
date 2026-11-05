@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Biblioteca</title>
 
@@ -14,7 +13,7 @@
 
 <body>
 
-  
+
 
     <section class="screen screen-app" id="screen-gestao">
 
@@ -25,9 +24,7 @@
                 biblioteca
             </span>
 
-            <button
-                class="app-bar-menu"
-                aria-label="menu">
+            <button class="app-bar-menu" aria-label="menu">
                 ☰
             </button>
 
@@ -37,92 +34,65 @@
         <!-- Botão voltar -->
         <div class="back-row">
 
-            <button
-                class="btn-voltar"
-                data-voltar>
+            <button class="btn-voltar" data-voltar>
                 ← voltar
             </button>
 
         </div>
 
-         <!-- Ilustração do topo com imagem interna -->
-  <div class="img-top">
-    <img src="../Imgs/DIGPLACEHIOL.jpg" alt="anuncio">
-  </div>
-
-          <section class="screen screen-app" id="screen-estudante">
-
-
-        <!-- Conteúdo principal -->
-        <div
-            class="card-body"
-            id="gestao-menu">
-
-            <div class="stack">
-
-
-                <!-- Calendário de entrega -->
-                <button
-                    type="button"
-                    class="nav-btn nav-blue"
-                    data-ir="calendario-entrega"
-                    data-em-breve="1">
-
-                    <span class="nav-icon">
-                        📅
-                    </span>
-
-                    <span class="nav-label">
-                        Calendário de entrega
-                    </span>
-
-                    <span class="nav-arrow">
-                        
-                    </span>
-
-                </button>
-
-
-                <!-- Espaçamento -->
-                <br>
-
-
-                <!-- Chat da biblioteca -->
-                <button
-                    type="button"
-                    class="nav-btn nav-green"
-                    data-ir="chat-biblioteca"
-                    data-em-breve="1">
-
-                    <span class="nav-icon">
-                        💬
-                    </span>
-
-                    <span class="nav-label">
-                        Chat da biblioteca
-                    </span>
-
-                    <span class="nav-arrow">
-                        
-                    </span>
-
-                </button>
-
-
-            </div>
-
-
-            <!-- Aviso -->
-            <p
-                class="em-breve"
-                id="estudante-aviso"
-                hidden>
-            </p>
-
-
-            <!-- Barra inferior -->
-            <div class="home-bar">
-            </div>
-
+        <!-- Ilustração do topo com imagem interna -->
+        <div class="img-top">
+            <img src="../Imgs/DIGPLACEHIOL.jpg" alt="anuncio">
         </div>
 
+        <section class="screen screen-app" id="screen">
+
+
+            <!-- Conteúdo principal -->
+            <div class="card-body" id="gestao-menu">
+
+                <div class="stack">
+
+
+                    <!-- Calendário de entrega -->
+                    <button type="button" class="nav-btn nav-blue" data-ir="calendario-entrega" data-em-breve="1">
+
+                        <span class="nav-icon">
+                            📅
+                        </span>
+
+                        <span class="nav-label">
+                            Calendário de entrega
+                        </span>
+
+                        <span class="nav-arrow">›</span>
+
+                    </button>
+
+
+
+                    <!-- Chat da biblioteca -->
+                    <button type="button" class="nav-btn nav-wine" data-ir="chat-biblioteca" data-em-breve="1">
+
+                        <span class="nav-icon"> 💬 </span>
+
+                        <span class="nav-label">Chat da biblioteca </span>
+                        <span class="nav-arrow">›</span>
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- Aviso -->
+                <p class="em-breve" id="" hidden>
+                </p>
+
+
+                <!-- Barra inferior -->
+                <div class="home-bar">
+                    <button class="home-btn" id="btn-home-estudante" aria-label="início" data-home>⌂</button>
+                </div>
+
+            </div>
