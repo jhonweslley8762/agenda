@@ -623,8 +623,7 @@ select {
 /* ---------- Ilustração da área do estudante ---------- */
 .img-top {
 
-  max-width: 10px;
-  max-height: 10vw;
+  height: 15vw;
 
 }
 .hero-illustration {

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -5,49 +6,96 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Área dos Pais</title>
+    <title>Inicio</title>
 
-    <link rel="stylesheet" href="area-pais.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-    <header class="cabecalho">
 
-        <h1>Área dos pais</h1>
 
-        <button class="menu">☰</button>
+    <section class="screen screen-app" id="screen-gestao">
 
-    </header>
+        <!-- Barra superior -->
+        <header class="app-bar-gestao">
 
-    <main>
+            <span class="app-bar-title">
+                pagina inicial
+            </span>
 
-     <section class="card">
+            <button class="app-bar-menu" aria-label="menu">
+                ☰
+            </button>
 
-     <button class="opcao escolas">
+        </header>
 
-      
-      <span class="icone">♙</span>
 
-        <span>escolas</span>
+        <!-- Botão voltar -->
+        <div class="back-row">
 
-            <span class="seta">›</span>
+            <button class="btn-voltar" data-voltar>
+                ← voltar
+            </button>
 
-     <button></button>
-        <button class="opcao boletim">
+        </div>
 
-    <span class="icone">♙</span>
+        <!-- Ilustração do topo com imagem interna -->
+        <div class="img-top">
+            <img src="../Imgs/placeholder.jpg" alt="anuncio">
+        </div>
 
-     <span>Boletim</span>
+        <section class="screen screen-app" id="screen">
 
-          <span class="seta">›</span>
 
-         </button>
+            <!-- Conteúdo principal -->
+            <div class="card-body" id="gestao-menu">
 
-       </section>
+                <div class="stack">
 
-    </main>
 
-</body>
+                    <!-- Calendário de entrega -->
+                    <button type="button" class="nav-btn nav-blue" data-ir="calendario-entrega" data-em-breve="1">
+
+                        <span class="nav-icon">
+                            👤
+                        </span>
+
+                        <span class="nav-label">
+                            Escola
+                        </span>
+
+                        <span class="nav-arrow">›</span>
+
+                    </button>
+
+
+
+                    <!-- Chat da biblioteca -->
+                    <button type="button" class="nav-btn nav-wine" data-ir="chat-biblioteca" data-em-breve="1">
+
+                        <span class="nav-icon"> 👤 </span>
+
+                        <span class="nav-label">Boletim </span>
+
+                        <span class="nav-arrow">›</span>
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- Aviso -->
+                <p class="em-breve" id="" hidden>
+                </p>
+
+
+                <!-- Barra inferior -->
+                <div class="home-bar">
+                    <button class="home-btn" id="btn-home-estudante" aria-label="início" data-home>⌂</button>
+                </div>
+
+            </div>
 
 </html>
