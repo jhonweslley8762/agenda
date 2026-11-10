@@ -922,12 +922,22 @@ select {
   padding: 12px 16px;
 }
 
-.app-bar-gestao {
+.app-bar-pais {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   background: #C21E53;
+  color: #ffffff;
+  padding: 12px 16px;
+}
+
+.app-bar-gestao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #FF9500;
   color: #ffffff;
   padding: 12px 16px;
 }
