@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'rawline regular', sans-serif;
 }
 
 #barra-atividades-professor{
@@ -60,7 +61,7 @@ Será removido mais para a frente do projeto para ser adicionada a foto real.*/
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "rawline regular", sans-serif;
   background: #d3d3d3;
   color: #1a1d29;
   min-height: 100vh;
@@ -71,14 +72,14 @@ body {
 }
 
 button {
-  font-family: inherit;
+  font-family: 'rawline medium', sans-serif;
   cursor: pointer;
   border: none;
 }
 
 input,
 select {
-  font-family: inherit;
+  font-family:'rawline medium', sans-serif;
   font-size: 14px;
 }
 
@@ -142,13 +143,13 @@ select {
 
 /* ---------- Tipografia ---------- */
 .title-lg {
-  font-family: "Manrope", sans-serif;
+  font-family: 'rawline bold', sans-serif;
   font-weight: 800;
   font-size: 28px;
   color: #111318;
 }
 .title-md {
-  font-family: "Manrope", sans-serif;
+  font-family: "rawline medium", sans-serif;
   font-weight: 700;
   font-size: 22px;
   color: #111318;
@@ -466,7 +467,7 @@ select {
     gap: 8px;
   }
   .brand-name {
-    font-family: "Manrope", sans-serif;
+    font-family: "rawline regular", sans-serif;
     font-weight: 700;
     font-size: 18px;
   }
@@ -548,6 +549,7 @@ select {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
 }
 
 .app-bar {
@@ -560,7 +562,7 @@ select {
   padding: 12px 16px;
 }
 .app-bar-title {
-  font-family: "Manrope", sans-serif;
+  font-family: "rawline bold", sans-serif;
   font-weight: 700;
   font-size: 15px;
 }
@@ -603,11 +605,13 @@ select {
   background: #ffffff;
   border-radius: 10px;
   margin: 0 12px 12px;
-  padding: 14px;
+  padding : 14px;
   flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 0;
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.2);
+
 }
 /* Quando a tela não tem "voltar", o cartão precisa do
    espaço de cima */
@@ -619,8 +623,7 @@ select {
 /* ---------- Ilustração da área do estudante ---------- */
 .img-top {
 
-  max-width: 10px;
-  max-height: 10vw;
+  height: 15vw;
 
 }
 .hero-illustration {
@@ -658,12 +661,14 @@ select {
   font-size: 12px;
   font-weight: 600;
   transition: filter 0.15s, transform 0.05s;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); 
 }
 .nav-btn:hover { filter: brightness(0.94); }
 .nav-btn:active { transform: scale(0.99); }
 .nav-blue  { background: #4d7ef3; }
 .nav-green { background: #0a7d4f; }
 .nav-yellow { background: #FF9500; }
+.nav-wine { background: #C21E53; }
 .nav-label { flex: 1; text-align: left; }
 .nav-arrow { opacity: 0.85; font-size: 14px; }
 
@@ -751,7 +756,7 @@ select {
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   padding: 12px;
-  font-family: inherit;
+  font-family: 'rawline regular', sans-serif;
   font-size: 14px;
   color: #1a1d29;
   background: #ffffff;
@@ -917,6 +922,16 @@ select {
   padding: 12px 16px;
 }
 
+.app-bar-pais {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #C21E53;
+  color: #ffffff;
+  padding: 12px 16px;
+}
+
 .app-bar-gestao {
   display: flex;
   align-items: center;
@@ -936,4 +951,24 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@font-face {
+    font-family: 'rawline bold';
+    src: url('font/rawline-700.ttf') 
+    format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+    font-family: 'rawline regular';
+    src: url('font/rawline-400.ttf') 
+    format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  
+    font-family: 'rawline medium';
+    src: url('font/rawline-500.ttf') 
+    format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
