@@ -90,6 +90,7 @@ window.onScreenLoaded = function (name) {
         case "pagina-escolas": initPaginaEscolas(); break;
         case "biblioteca-gestao": initBibliotecaGestao(); break;
         case "comunicados-escola-prof": initComunicadosEscolaProf(); break;
+        case "escola-gestao": initEscolaGestao(); break;
         
 
         default: Router.replace("welcome");
@@ -129,6 +130,7 @@ function podeAbrir(name) {
         case "pagina-escolas":
         case "biblioteca-gestao":
         case "comunicados-escola-prof":
+        case "escola-gestao":
             // Aqui vale a conta em memória OU a sessão salva no navegador
             return Boolean(state.contaAtual || Storage.contaLogada());
         default:
