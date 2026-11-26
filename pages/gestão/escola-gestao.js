@@ -1,0 +1,121 @@
+PAGES["escola-gestao"] = `
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Escola gestão</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  
+
+    <section class="screen screen-app" id="screen-gestao">
+
+        <!-- Barra superior -->
+        <header class="app-bar-gestao">
+
+            <span class="app-bar-title">
+                Escola
+            </span>
+
+            <button
+                class="app-bar-menu"
+                aria-label="menu">
+                ☰
+            </button>
+
+        </header>
+
+
+        <!-- Botão voltar -->
+        <div class="back-row">
+
+            <button
+                class="btn-voltar"
+                data-voltar>
+                ← voltar
+            </button>
+
+        </div>
+
+         <!-- Ilustração do topo com imagem interna -->
+  <div class="img-top">
+    <img src="../Imgs/placeholder.jpg" alt="anuncio">
+  </div>
+
+          <section class="screen screen-app" id="screen">
+
+
+        <!-- Conteúdo principal -->
+        <div
+            class="card-body"
+            id="gestao-menu">
+
+            <div class="stack">
+
+
+                <!-- comunicados da escola -->
+                <button
+                    type="button"
+                    class="nav-btn nav-blue"
+                    data-ir="calendario-entrega"
+                    data-em-breve="1">
+
+                    <span class="nav-icon">
+                        📅
+                    </span>
+
+                    <span class="nav-label">
+                        comunicados da escola
+                    </span>
+
+                    <span class="nav-arrow">›</span>
+
+                </button>
+
+
+            
+
+                <!-- professores -->
+                <button
+                    type="button"
+                    class="nav-btn nav-yellow"
+                    data-ir="chat-biblioteca"
+                    data-em-breve="1">
+
+                    <span class="nav-icon">
+                        💬
+                    </span>
+
+                    <span class="nav-label">
+                      professores
+                    </span>
+
+                    <span class="nav-arrow">›</span>
+
+                </button>
+
+
+            </div>
+
+
+            <!-- Aviso -->
+            <p
+                class="em-breve"
+                id="estudante-aviso"
+                hidden>
+            </p>
+
+
+            <!-- Barra inferior -->
+            <div class="home-bar">
+                <button class="home-btn" id="btn-home-estudante" aria-label="início" data-home>⌂</button>
+            </div>
+
+        </div>
+`;

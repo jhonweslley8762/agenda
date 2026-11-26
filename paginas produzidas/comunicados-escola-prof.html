@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!--Esta página ainda não funciona, é necessário o uso de JS para finalizar
+    a página já pode ser adicionada ao js-->
+
+    <section class="screen screen-app screen-chat" id="screen-professor">
+
+        <header class="app-bar-professor">
+            <span class="app-bar-title">comunicados da escola</span>
+            <button class="app-bar-menu" aria-label="menu">☰</button>
+        </header>
+
+        <div class="back-row">
+            <button class="btn-voltar" data-voltar>← voltar</button>
+        </div>
+
+        <!-- As mensagens são criadas pelo js/app.js -->
+        <div class="chat-list" id="chat-sala-lista"></div>
+
+        <div class="chat-compose">
+            <input class="chat-input" id="chat-sala-campo" type="text" placeholder="escreva algo..." />
+            <button class="chat-send" id="chat-sala-enviar" aria-label="enviar">➤</button>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

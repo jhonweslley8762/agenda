@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biblioteca</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+
+
+    <section class="screen screen-app" id="screen-gestao">
+
+        <!-- Barra superior -->
+        <header class="app-bar-gestao">
+
+            <span class="app-bar-title">
+                biblioteca
+            </span>
+
+            <button class="app-bar-menu" aria-label="menu">
+                ☰
+            </button>
+
+        </header>
+
+
+        <!-- Botão voltar -->
+        <div class="back-row">
+
+            <button class="btn-voltar" data-voltar>
+                ← voltar
+            </button>
+
+        </div>
+
+        <!-- Ilustração do topo com imagem interna -->
+        <div class="img-top">
+            <img src="../Imgs/placeholder.jpg" alt="anuncio">
+        </div>
+
+        <section class="screen screen-app" id="screen">
+
+
+            <!-- Conteúdo principal -->
+            <div class="card-body" id="gestao-menu">
+
+                <div class="stack">
+
+
+                    <!-- Calendário de entrega -->
+                    <button type="button" class="nav-btn nav-blue" data-ir="calendario-entrega" data-em-breve="1">
+
+                        <span class="nav-icon">
+                            📅
+                        </span>
+
+                        <span class="nav-label">
+                            Calendário de entrega
+                        </span>
+
+                        <span class="nav-arrow">›</span>
+
+                    </button>
+
+
+
+                    <!-- Chat da biblioteca -->
+                    <button type="button" class="nav-btn nav-wine" data-ir="chat-biblioteca" data-em-breve="1">
+
+                        <span class="nav-icon"> 💬 </span>
+
+                        <span class="nav-label">Chat da biblioteca </span>
+                        <span class="nav-arrow">›</span>
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- Aviso -->
+                <p class="em-breve" id="" hidden>
+                </p>
+
+
+                <!-- Barra inferior -->
+                <div class="home-bar">
+                    <button class="home-btn" id="btn-home-estudante" aria-label="início" data-home>⌂</button>
+                </div>
+
+            </div>
